@@ -1,14 +1,8 @@
-name: deploy
-inputs:
-  version:
-    required: true
-  namespace:
-    required: true
-runs:
-  using: composite
-  steps:
-    - name: deploy stack
-      uses: somelibrary/deploy@master
-      with:
-        version: '${{ inputs.version }}'
-        namespace: '${{ inputs.namespace}}'
+name: hello-world
+on: push
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Hello World!"
