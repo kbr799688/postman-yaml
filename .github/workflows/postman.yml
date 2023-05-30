@@ -1,0 +1,14 @@
+name: deploy
+inputs:
+  version:
+    required: true
+  namespace:
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: deploy stack
+      uses: somelibrary/deploy@master
+      with:
+        version: '${{ inputs.version }}'
+        namespace: '${{ inputs.namespace}}'
